@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition>
+	<import>
+		<package>com.is_gr8.eclipse.firstspirit</package>
+		<package>com.is_gr8.eclipse.firstspirit.module</package>
+		<package>com.is_gr8.eclipse.firstspirit.module.components</package>
+	</import>
+
+	<editor-page>
+		<id>main</id>
+		<page-header-text>Module Descriptor</page-header-text>
+		<initial-selection>name</initial-selection>
+		<documentation>
+			<title>module editor</title>
+			<content>Settings for the module.</content>
+		</documentation>
+		<root-node>
+			<node>
+				<label>Module Attributes</label>
+				<section>
+					<content>
+						<property-editor>Name</property-editor>
+						<property-editor>Displayname</property-editor>
+						<property-editor>Description</property-editor>
+						<property-editor>Vendor</property-editor>
+						<property-editor>Version</property-editor>
+					</content>
+					<description>Basic module settings. Maven placeholders are
+						supported and can be used as values.
+					</description>
+				</section>
+				<section>
+					<label>Dependencies</label>
+					<content>
+						<property-editor>
+							<property>Dependencies</property>
+							<child-property>
+								<property>Dependency</property>
+							</child-property>
+							<show-label>false</show-label>
+							<span>true</span>
+							<hint>
+								<name>column.widths</name>
+								<value>100,100:1</value>
+							</hint>
+						</property-editor>
+					</content>
+				</section>
+			</node>
+			
+			<node>
+				<label>Resources</label>
+				<section-ref>ResourcesSection</section-ref>
+			</node>
+
+			<node>
+				<label>Components</label>
+				<node-include>ComponentNodeFactory</node-include>
+				<section>
+					<content>
+						<actuator>
+							<action-id>Sapphire.Add</action-id>
+							<action-handler-id>Sapphire.Add.Service</action-handler-id>
+							<label>add a service component</label>
+						</actuator>
+						<actuator>
+							<action-id>Sapphire.Add</action-id>
+							<action-handler-id>Sapphire.Add.Public</action-handler-id>
+							<label>add a public component</label>
+						</actuator>
+						<actuator>
+							<action-id>Sapphire.Add</action-id>
+							<action-handler-id>Sapphire.Add.Library</action-handler-id>
+							<label>add a library component</label>
+						</actuator>
+						<actuator>
+							<action-id>Sapphire.Add</action-id>
+							<action-handler-id>Sapphire.Add.WebApp</action-handler-id>
+							<label>add a web-app component</label>
+						</actuator>
+					</content>
+					<description>Manage all components.</description>
+				</section>
+			</node>
+
+		</root-node>
+		<page-header-image>${ Image() }</page-header-image>
+		<page-name>module</page-name>
+		<element-type>ModuleDescriptor</element-type>
+	</editor-page>
+	<node-factory>
+		<id>ComponentNodeFactory</id>
+		<property>Components</property>
+		<case>
+			<element-type>Service</element-type>
+			<label>Service ${ Name }</label>
+			<section-ref>ComponentMainSection</section-ref>
+			<section>
+				<label>Service</label>
+				<content>
+					<property-editor>JavaClass</property-editor>
+					<property-editor>Configurable</property-editor>
+				</content>
+			</section>
+			<section-ref>ResourcesSection</section-ref>
+		</case>
+		<case>
+			<element-type>Public</element-type>
+			<label>Public ${ Name }</label>
+			<section-ref>ComponentMainSection</section-ref>
+			<section>
+				<label>Public</label>
+				<content>
+					<property-editor>JavaClass</property-editor>
+					<property-editor>Configurable</property-editor>
+				</content>
+			</section>
+			<section-ref>ResourcesSection</section-ref>
+		</case>
+		<case>
+			<element-type>Library</element-type>
+			<label>Library ${ Name }</label>
+			<section-ref>ComponentMainSection</section-ref>
+			<section>
+				<label>Library</label>
+				<content>
+					<property-editor>Hidden</property-editor>
+					<property-editor>Configurable</property-editor>
+				</content>
+			</section>
+			<section-ref>ResourcesSection</section-ref>
+		</case>
+		<case>
+			<element-type>WebApp</element-type>
+			<label>WebApp ${ Name }</label>
+			<section-ref>ComponentMainSection</section-ref>
+			<section>
+				<label>WebApp</label>
+				<content>
+					<property-editor>JavaClass</property-editor>
+					<property-editor>Configurable</property-editor>
+					<property-editor>WebXml</property-editor>
+					<property-editor>WebResources</property-editor>
+				</content>
+			</section>
+			<section-ref>ResourcesSection</section-ref>
+		</case>
+	</node-factory>
+	<section>
+		<id>ComponentMainSection</id>
+		<label>General Settings</label>
+		<content>
+			<property-editor>Name</property-editor>
+			<property-editor>Displayname</property-editor>
+			<property-editor>Description</property-editor>
+		</content>
+	</section>
+	<section>
+		<id>ResourcesSection</id>
+		<label>Resources</label>
+		<content>
+			<property-editor>
+				<property>Resources</property>
+				<child-property>
+					<property>Resource</property>
+				</child-property>
+				<child-property>
+					<property>Scope</property>
+				</child-property>
+				<child-property>
+					<property>Name</property>
+				</child-property>
+				<child-property>
+					<property>Version</property>
+				</child-property>
+				<child-property>
+					<property>MinVersion</property>
+				</child-property>
+				<child-property>
+					<property>MaxVersion</property>
+				</child-property>
+				<show-label>false</show-label>
+				<span>true</span>
+				<hint>
+					<name>column.widths</name>
+					<value>100,100,100,100,100,100:1</value>
+				</hint>
+			</property-editor>
+		</content>
+	</section>
+
+</definition>
