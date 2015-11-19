@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="fsModuleDescriptor" version="1.0.0"/>
+   <feature url="features/fsModuleEditor.feature_1.0.0.jar" id="fsModuleEditor.feature" version="1.0.0">
+      <category name="all"/>
+   </feature>
+   <category-def name="all" label="FirstSpirit Module Support"/>
 </site>
