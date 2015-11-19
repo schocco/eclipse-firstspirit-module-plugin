@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/fsModuleEditor.feature_1.0.0.jar" id="fsModuleEditor.feature" version="1.0.0">
-      <category name="all"/>
+   <feature url="features/fsModuleEditor.feature_1.0.1.jar" id="fsModuleEditor.feature" version="1.0.1">
+      <category name="fsModuleSupport"/>
    </feature>
-   <category-def name="all" label="FirstSpirit Module Support"/>
+   <category-def name="fsModuleSupport" label="FirstSpirit Module Support"/>
 </site>

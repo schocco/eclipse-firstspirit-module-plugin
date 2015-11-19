@@ -1,8 +1,19 @@
 # FirstSpirit Module Editor Plugin for Eclipse
 
 The plugin provides a from based editor for FirstSpirit5 `module.xml` files and basic refactoring support.  
-At least Eclipse Mars is required to install the plugin.
 
+## Installation
+
+The plugin has been tested on Linux and Windows under Eclipse 4.5.1 (Mars),
+older versions are not supported.
+
+Use the following update site to install the plugin:
+
+    https://dl.bintray.com/schocco/generic/
+    
+Or install using the Eclipse Marketplace (once the plugin is listed there).
+
+<a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2614946" class="drag" title="Drag to your running Eclipse workspace to install FirstSpirit Module-Descriptor Support"><img src="https://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/btn-install.png" alt="Drag to your running Eclipse workspace to install FirstSpirit Module-Descriptor Support" /></a>
 
 ## Development
 

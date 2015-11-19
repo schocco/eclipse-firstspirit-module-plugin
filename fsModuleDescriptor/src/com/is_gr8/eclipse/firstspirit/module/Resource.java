@@ -12,8 +12,6 @@ import org.eclipse.sapphire.modeling.xml.annotations.XmlBinding;
 import org.eclipse.sapphire.modeling.xml.annotations.XmlNamespace;
 import org.eclipse.sapphire.modeling.xml.annotations.XmlSchema;
 
-@XmlNamespace(uri = "http://www.adesso.de/fsModuleDescriptor/resource")
-@XmlSchema(namespace = "http://www.adesso.de/fsModuleDescriptor", location = "http://www.adesso.de/fsModuleDescriptor")
 @XmlBinding(path = "resource")
 public interface Resource extends Element {
 	

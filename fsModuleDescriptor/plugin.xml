@@ -10,9 +10,9 @@
 <extension
      point="org.eclipse.ltk.core.refactoring.renameParticipants">
   <renameParticipant
-    id="com.is_gr8.eclipse.firstspirit.ModuleRenameTypeParticipant"
+    id="com.is_gr8.eclipse.firstspirit.ModuleClassRenameTypeParticipant"
     name="Rename Module Class" 
-    class="com.is_gr8.eclipse.firstspirit.module.rename.ModuleRenameParticipant">
+    class="com.is_gr8.eclipse.firstspirit.module.refactor.RenameClassParticipant">
     <enablement>
       <with variable="affectedNatures">
         <iterate operator="or">
@@ -26,11 +26,30 @@
   </renameParticipant>
 </extension>
 
+<extension
+     point="org.eclipse.ltk.core.refactoring.moveParticipants">
+  <moveParticipant
+    id="com.is_gr8.eclipse.firstspirit.MoveClassParticipant"
+    name="Move class" 
+    class="com.is_gr8.eclipse.firstspirit.module.refactor.MoveClassParticipant">
+    <enablement>
+      <with variable="affectedNatures">
+        <iterate operator="or">
+          <equals value="org.eclipse.jdt.core.javanature"/>
+        </iterate>
+      </with>
+      <with variable="element">
+        <instanceof value="org.eclipse.jdt.core.IType"/>
+      </with>
+    </enablement>
+  </moveParticipant>
+ </extension>
+
   <extension point="org.eclipse.ui.editors">
     <editor
       id="com.is_gr8.eclipse.firstspirit.ModuleDescriptorEditor"
       name="FS Module Descriptor Editor"
-      icon="de/adesso/eclipse/firstspirit/firstspirit.16.png"
+      icon="com/is_gr8/eclipse/firstspirit/firstspirit.16.png"
       filenames="module.xml"
       default="true">
       <class class="org.eclipse.sapphire.ui.swt.xml.editor.SapphireEditorForXml">

@@ -1,4 +1,4 @@
-package com.is_gr8.eclipse.firstspirit.module.rename;
+package com.is_gr8.eclipse.firstspirit.module.refactor;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

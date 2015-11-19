@@ -86,7 +86,7 @@ public interface ModuleDescriptor extends Element {
 	ElementList<Component> getComponents();
 
 	// dependencies
-	@Type(base = Resource.class)
+	@Type(base = Dependency.class)
 	@Label(standard = "Dependencies")
 	@XmlListBinding(path = "dependencies", mappings = @XmlListBinding.Mapping(element = "depends", type = Dependency.class))
 	ListProperty PROP_DEPENDENCIES = new ListProperty(TYPE, "Dependencies");
